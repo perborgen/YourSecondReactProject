@@ -1,0 +1,59 @@
+<!-- DOCTYPE HTML -->
+<html>
+<head>
+<title>iTunes API</title>
+</head>
+<body>
+<div id="content"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>   
+<script src="https://fb.me/react-0.14.6.js"></script>
+<script src="https://fb.me/react-dom-0.14.6.js"></script>
+<script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+<script type="text/jsx">
+
+var App = React.createClass({
+    render: function(){
+        return (
+            <div>
+                <SearchBox />
+                <Results />
+            </div>
+        );
+    }
+});
+
+var SearchBox = React.createClass({
+    render: function(){
+        return (
+            <div>
+                <input type="text" />
+                <select>
+                    <option value="software">Apps</option>
+                    <option value="movie">Films</option>
+                </select>
+                <input type="submit" />
+            </div>
+        );
+    }
+});
+
+var Results = React.createClass({
+    render: function(){
+        return(
+            <ul>
+                <ResultItem />
+            </ul>           
+        );
+    }
+});
+
+var ResultItem = React.createClass({
+    render: function(){
+        return <li>a search result item</li>;
+    }
+});
+
+ReactDOM.render(<App />,  document.getElementById("content"));
+
+</script>
+</html>
